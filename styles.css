@@ -1,0 +1,314 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.content {
+    text-align: center;
+}
+
+.header {
+    color: white;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: float 3s ease-in-out infinite;
+}
+
+.header .subtitle {
+    font-size: 1.2em;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Flowers Animation */
+.flowers {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.flower {
+    font-size: 2.5em;
+    animation: sway 4s ease-in-out infinite;
+}
+
+.flower.tulip {
+    animation-delay: 0s;
+}
+
+.flower.daisy {
+    animation-delay: 0.5s;
+}
+
+.flower.rose {
+    animation-delay: 1s;
+}
+
+@keyframes sway {
+    0%, 100% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+}
+
+/* Button Styling */
+.button-container {
+    margin: 40px 0;
+}
+
+.love-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: 3px solid white;
+    color: white;
+    padding: 20px 40px;
+    font-size: 1.2em;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.love-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.love-button:active {
+    transform: scale(0.98);
+}
+
+.heart {
+    font-size: 1.5em;
+}
+
+.message {
+    color: white;
+    font-size: 1.1em;
+    margin-top: 30px;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s ease;
+    padding: 20px;
+}
+
+.modal.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #fff5f7 0%, #e8f4f8 100%);
+    padding: 30px 25px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-height: 85vh;
+    overflow-y: auto;
+    max-width: 450px;
+    width: 100%;
+    position: relative;
+    animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 2em;
+    font-weight: bold;
+    color: #667eea;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close:hover {
+    transform: scale(1.3);
+    color: #764ba2;
+}
+
+.letter-header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 20px;
+}
+
+.letter-header h2 {
+    color: #667eea;
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.letter-flowers {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-size: 2em;
+}
+
+.letter-body {
+    color: #333;
+    line-height: 1.8;
+    font-size: 1em;
+}
+
+.letter-body p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.signature {
+    font-style: italic;
+    color: #764ba2;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-top: 30px;
+}
+
+.letter-footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #667eea;
+    color: #667eea;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .header .subtitle {
+        font-size: 1em;
+    }
+
+    .flower {
+        font-size: 2em;
+    }
+
+    .love-button {
+        padding: 15px 30px;
+        font-size: 1em;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .heart {
+        font-size: 1.2em;
+    }
+
+    .modal-content {
+        padding: 20px 15px;
+        margin: 0;
+    }
+
+    .letter-header h2 {
+        font-size: 1.5em;
+    }
+
+    .letter-flowers {
+        font-size: 1.5em;
+        gap: 10px;
+    }
+
+    .letter-body p {
+        font-size: 0.95em;
+    }
+}
+
+/* Scrollbar Styling */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: #764ba2;
+}
